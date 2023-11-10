@@ -176,14 +176,14 @@ const updateUser = asyncHandler(async (req, res) => {
     user.name = req.body.name || name;
     user.phone = req.body.phone || phone;
     user.bio = req.body.bio || bio;
-    user.photo = req.body.photo || photo;
+    // user.photo = req.body.photo || photo;
 
     const updatedUser = await user.save();
     res.status(200).json({
       _id: updatedUser._id,
       name: updatedUser.name,
       email: updatedUser.email,
-      photo: updatedUser.photo,
+      // photo: updatedUser.photo,
       phone: updatedUser.phone,
       bio: updatedUser.bio,
     });
